@@ -17,8 +17,17 @@
  * 0    => promise that will be fulfilled
  * 1    => promise that will be fulfilled
  */
-function getPromise(/* number */) {
-  throw new Error('Not implemented');
+function getPromise(number) {
+  const prom = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (number >= 0) {
+        resolve();
+      } else {
+        reject();
+      }
+    }, 300);
+  });
+  return prom;
 }
 
 /**
